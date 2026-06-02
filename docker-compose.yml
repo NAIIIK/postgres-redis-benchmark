@@ -17,3 +17,18 @@ services:
     ports:
       - "6379:6379"
     restart: always
+
+  app:
+    build: .
+    container_name: final4-javarush
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=
+      - DB_PASSWORD=
+      - REDIS_HOST=redis
+      - DB_PORT=5432
+      - REDIS_PORT=6379
+    restart: on-failure
