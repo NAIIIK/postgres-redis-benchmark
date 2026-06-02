@@ -1,13 +1,13 @@
 package com.javarush.util;
 
 public class Util {
-    public static final String DB_USER = "";
-    public static final String DB_PASSWORD = "";
+    public static final String DB_USER = System.getenv().getOrDefault("DB_USER", "postgres");
+    public static final String DB_PASSWORD = System.getenv().getOrDefault("DB_PASSWORD", "postgres");
 
 
-    public static final String DB_HOST = "localhost";
-    public static final Integer DB_PORT = 5432;
-    public static final Integer REDIS_PORT = 6379;
+    public static final String DB_HOST = System.getenv().getOrDefault("DB_HOST", "localhost");
+    public static final String DB_PORT = System.getenv().getOrDefault("DB_PORT", "5432");
+    public static final String REDIS_PORT = System.getenv().getOrDefault("REDIS_PORT", "6379");
 
     public static final String CHANGE_LOG_PATH = "db/changelog/master.yaml";
 

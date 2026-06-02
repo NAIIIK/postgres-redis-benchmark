@@ -36,7 +36,7 @@ public class AppConfig {
     }
 
     public static RedisClient prepareRedisClient() {
-        RedisClient client = RedisClient.create(RedisURI.create("localhost", Util.REDIS_PORT));
+        RedisClient client = RedisClient.create(RedisURI.create("localhost", Integer.parseInt(Util.REDIS_PORT)));
 
         try (StatefulRedisConnection<String, String> connection = client.connect()) {
             System.out.println("Connected to Redis\n");
