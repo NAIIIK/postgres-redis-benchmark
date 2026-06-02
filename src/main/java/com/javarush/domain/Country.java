@@ -12,7 +12,7 @@ import java.util.Set;
         schema = "world",
         name = "country",
         indexes = {
-                @Index(name = "country_ibfk_1_idx", columnList = "capital")
+                @Index(name = "country_ibfk_1_idx", columnList = "capital_id")
         }
 )
 @Getter
@@ -23,10 +23,10 @@ public class Country {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "code", length = 3, nullable = false)
+    @Column(name = "code", columnDefinition = "bpchar", length = 3, nullable = false)
     private String code;
 
-    @Column(name = "code_2", length = 2, nullable = false)
+    @Column(name = "code_2", columnDefinition = "bpchar", length = 2, nullable = false)
     private String code2;
 
     @Column(name = "name",  length = 52, nullable = false)
@@ -67,7 +67,7 @@ public class Country {
     private String headOfState;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "capital")
+    @JoinColumn(name = "capital_id")
     private City city;
 
     @OneToMany(fetch = FetchType.EAGER)
