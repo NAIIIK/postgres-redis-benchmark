@@ -29,16 +29,22 @@ public class Main {
 
             List<Integer> ids = List.of(3, 2545, 123, 4, 189, 89, 3458, 1189, 10, 102);
 
-            long startRedis = System.currentTimeMillis();
-            benchmarkService.testRedisPerformance(ids);
-            long stopRedis = System.currentTimeMillis();
+            for (int i = 0; i < 2; i++) {
+                long startRedis = System.currentTimeMillis();
+                benchmarkService.testRedisPerformance(ids);
+                long stopRedis = System.currentTimeMillis();
 
-            long startPostgres = System.currentTimeMillis();
-            benchmarkService.testPostgresPerformance(ids);
-            long stopPostgres = System.currentTimeMillis();
+                long startPostgres = System.currentTimeMillis();
+                benchmarkService.testPostgresPerformance(ids);
+                long stopPostgres = System.currentTimeMillis();
 
-            System.out.printf("%s:\t%d ms\n", "Redis",  (stopRedis - startRedis));
-            System.out.printf("%s:\t%d ms\n", "PostgreSQL",  (stopPostgres - startPostgres));
+                System.out.printf("%s:\t%d ms\n", "Redis",  (stopRedis - startRedis));
+                System.out.printf("%s:\t%d ms\n", "PostgreSQL",  (stopPostgres - startPostgres));
+
+                Thread.sleep(5_000);
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         } finally {
             if (sessionFactory != null) sessionFactory.close();
             redisClient.shutdown();

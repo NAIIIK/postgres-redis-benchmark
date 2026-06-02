@@ -38,7 +38,7 @@ public class BenchmarkService {
                 try {
                     objectMapper.readValue(value, CityCountry.class);
                 } catch (JsonProcessingException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException("Ошибка: Не удалось подключиться к Redis! Проверьте, запущен ли контейнер.", e);
                 }
             }
         }

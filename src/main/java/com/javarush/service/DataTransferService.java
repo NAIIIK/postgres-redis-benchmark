@@ -96,7 +96,7 @@ public class DataTransferService {
                 try {
                     sync.set(String.valueOf(cityCountry.getId()), objectMapper.writeValueAsString(cityCountry));
                 } catch (JsonProcessingException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException("Не получилось запушить данные в Redis...", e);
                 }
             }
         }
