@@ -15,7 +15,9 @@
 
 ### 2. Cобрать JAR
 
-`mvn clean package`
+```bash
+mvn clean package
+```
 
 ### 3. Конфигурировать данные пользователя базы данных.
 
