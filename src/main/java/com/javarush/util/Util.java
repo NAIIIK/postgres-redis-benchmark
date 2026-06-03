@@ -31,7 +31,7 @@ public final class Util {
     public static final int CHECK_QUANTITY = parseIntEnvVariable("CHECK_QUANTITY", DEFAULT_CHECK_QUANTITY);
     private static final String CHECK_PAUSE_ENV_KEY = "CHECK_PAUSE_SECONDS";
     private static final int DEFAULT_CHECK_PAUSE_SECONDS = 5;
-    public static final int SECOND_CHECK_PAUSE_MILLIS = getPauseMillis();
+    public static final int CHECK_PAUSE_MILLIS = getPauseMillis();
 
     private static String buildDbUrl(String dbPrefix) {
         return String.format("%s://%s:%d/%s", dbPrefix, DB_HOST, DB_PORT, DB_NAME);

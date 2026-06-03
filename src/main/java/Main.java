@@ -51,7 +51,7 @@ public class Main {
 
                 benchmarkStats.put(i + 1, String.format("%s; %s", redisPerformance, postgresPerformance));
 
-                Thread.sleep(Util.SECOND_CHECK_PAUSE_MILLIS);
+                Thread.sleep(Util.CHECK_PAUSE_MILLIS);
             }
 
             System.out.println("--------------------------------------------");
