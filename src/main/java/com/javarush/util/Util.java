@@ -53,7 +53,7 @@ public final class Util {
     }
 
     private static int parseIntEnvVariable(String envVariable, int defaultValue) {
-        String envValue = System.getenv(envVariable);
+        String envValue = checkEnvVariable(envVariable);
 
         if (envValue == null || envValue.isBlank()) return defaultValue;
 
