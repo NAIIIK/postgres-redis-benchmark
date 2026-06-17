@@ -1,38 +1,46 @@
-# Итоговый проект 4 модуля - JavaRush University
+# PostgreSQL-Redis Benchmark Utility
 
 ---
 
-Проект представляет собой Java-приложение на основе **PostgreSQL** и **Redis**, полностью контейнеризованное с помощью **Docker Compose**.
+A Java application that compares read performance between **PostgreSQL** and **Redis**, 
+fully containerized with **Docker Compose**.
 
-Приложение сравнивает скорость чтения данных из **PostgreSQL** и **Redis**. Сравнение происходит заданное количество раз с определенной паузой.
-Количество сравнений и временной интервал задаются через переменные окружения `CHECK_QUANTITY` и `CHECK_PAUSE_SECONDS` соответственно.
+The application runs a configurable number of comparisons with a defined pause between each.
+The number of comparisons and the interval are set via environment variables
+`CHECK_QUANTITY` and `CHECK_PAUSE_SECONDS`.
 
 ---
 
-## Запуск
+## Stack
 
-### 1. Клонировать репозиторий
+Java • Hibernate • Lettuce • Docker Compose • PostgreSQL • Redis
 
-### 2. Cобрать JAR
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+### 2. Build the JAR
 
 ```bash
 mvn clean package
 ```
 
-### 3. Конфигурировать данные пользователя базы данных.
+### 3. Configure database credentials
 
-Отредактируй в `docker-compose.yml`:
+Edit `docker-compose.yml`:
 
-* переменные `POSTGRES_USER` и `POSTGRES_PASSWORD` в сервисе `postgres`
-* переменные `DB_USER` и `DB_PASSWORD` в сервисе  `app`.
+* set `POSTGRES_USER` and `POSTGRES_PASSWORD` in the `postgres` service
+* set `DB_USER` and `DB_PASSWORD` in the `app` service.
 
-### 4. Собрать и запустить все сервисы
+### 4. Build and start all services
 
 ```bash
 docker compose up --build
 ```
 
-### 5. Остановить сервисы после выполнения
+### 5. Stop services
 
 ```bash
 docker compose down
@@ -40,9 +48,7 @@ docker compose down
 
 ---
 
-## Переменные окружения
-
-Переменные окружения передаются в контейнер приложения через `docker-compose.yml`:
+## Environment Variables
 
 | Переменная            | Значение по умолчанию | Описание |
 |-----------------------|-----------------------|----------|
