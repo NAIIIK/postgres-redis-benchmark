@@ -50,14 +50,14 @@ docker compose down
 
 ## Environment Variables
 
-| Переменная            | Значение по умолчанию | Описание |
-|-----------------------|-----------------------|----------|
-| `DB_NAME`             | `final4`              | Название базы данных |
-| `DB_HOST`             | `postgres`            | Хост PostgreSQL (имя сервиса) |
-| `DB_PORT`             | `5432`                | Порт PostgreSQL |
-| `DB_USER`             | `null`                | Пользователь базы данных |
-| `DB_PASSWORD`         | `null`                | Пароль базы данных |
-| `REDIS_HOST`          | `redis`               | Хост Redis (имя сервиса) |
-| `REDIS_PORT`          | `6379`                | Порт Redis |
-| `CHECK_QUANTITY` | `3`                   | Количество сравнений |
-| `CHECK_PAUSE_SECONDS` | `3`                   | Пауза (в секундах) между сравнениями |
+| Переменная            | Значение по умолчанию | Описание                             |
+|-----------------------|-----------------------|--------------------------------------|
+| `DB_NAME`             | `final4`              | Database name                        |
+| `DB_HOST`             | `postgres`            | PostgreSQL host (service name)       |
+| `DB_PORT`             | `5432`                | PostgreSQL port                      |
+| `DB_USER`             | `null`                | Database user                        |
+| `DB_PASSWORD`         | `null`                | Database password                    |
+| `REDIS_HOST`          | `redis`               | Redis host (service name)            |
+| `REDIS_PORT`          | `6379`                | Redis port                           |
+| `CHECK_QUANTITY` | `3`                   | Number of comparisons to run                 |
+| `CHECK_PAUSE_SECONDS` | `3`                   | Pause in seconds between comparisons |
