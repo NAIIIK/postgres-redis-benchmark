@@ -9,6 +9,8 @@ The application runs a configurable number of comparisons with a defined pause b
 The number of comparisons and the interval are set via environment variables
 `CHECK_QUANTITY` and `CHECK_PAUSE_SECONDS`.
 
+Results vary depending on hardware and system configuration. Run the benchmark locally to see results on your machine.
+
 ---
 
 ## Stack
