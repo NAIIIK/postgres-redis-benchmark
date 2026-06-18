@@ -52,7 +52,7 @@ docker compose down
 
 ## Environment Variables
 
-| Переменная            | Значение по умолчанию | Описание                             |
+| Variable              | Default Value | Description                                  |
 |-----------------------|-----------------------|--------------------------------------|
 | `DB_NAME`             | `final4`              | Database name                        |
 | `DB_HOST`             | `postgres`            | PostgreSQL host (service name)       |
@@ -61,5 +61,5 @@ docker compose down
 | `DB_PASSWORD`         | `null`                | Database password                    |
 | `REDIS_HOST`          | `redis`               | Redis host (service name)            |
 | `REDIS_PORT`          | `6379`                | Redis port                           |
-| `CHECK_QUANTITY` | `3`                   | Number of comparisons to run                 |
+| `CHECK_QUANTITY`      | `3`                   | Number of comparisons to run         |
 | `CHECK_PAUSE_SECONDS` | `3`                   | Pause in seconds between comparisons |
